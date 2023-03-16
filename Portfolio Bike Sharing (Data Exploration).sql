@@ -11,7 +11,10 @@ FROM `deft-epigram-368610.PortfolioBikeSharing.tripdata_full_2022`
 WHERE TIMESTAMP_DIFF(ended_at, started_at, MINUTE) >= 5
 
 
---Since we are working with the already merged table, let's look at every month of 2022 and how many rides occur in each of them. And we can observe, that members use bike sharing more evenly during the year. The difference among months, where users are members, is not so big as among months, where users are casual. 
+/* Since we are working with the already merged table, let's look at every month of 2022 and how many rides occur in each of them. 
+And we can observe, that members use bike sharing more evenly during the year. 
+The difference among months, where users are members, is not so big as among months, where users are casual. */
+
 SELECT FORMAT_TIMESTAMP("%B", started_at) AS month_of_2022, COUNT(ride_id) AS total_rides
 FROM `deft-epigram-368610.PortfolioBikeSharing.tripdata_full_2022`
 WHERE TIMESTAMP_DIFF(ended_at, started_at, MINUTE) >= 5 and member_casual = --"casual"
