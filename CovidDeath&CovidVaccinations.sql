@@ -38,7 +38,8 @@ GROUP BY location
 ORDER BY TotalDeathsCount DESC
 
 /* Continents and larger groups of countries with the highest deaths count.
-For some reason Continents and groups of countries (i.e. EU, World and Oceania) were included in the "location" column, leaving the "continent" column NULL. That is why we query the same column "location" as in the previous query, but with "continent is NULL" in the WHERE statement. */
+For some reason Continents and groups of countries (i.e. EU, World and Oceania) were included in the "location" column, leaving the "continent" column NULL.
+That is why we query the same column "location" as in the previous query, but with "continent is NULL" in the WHERE statement. */
 
 SELECT location, MAX(total_deaths) AS TotalDeathsCount
 FROM `deft-epigram-368610.PortfolioProject.CovidDeaths`
